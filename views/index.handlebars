@@ -40,7 +40,7 @@
             devoured: 1
         }
 
-        $.ajax("/api/burgers/" + id, {
+        $.ajax("/api/burger/" + id, {
             type: "PUT",
             data: devouredBurger
         }).then(function () {
@@ -57,7 +57,7 @@
             burger_name: $("#addBurger [name=newBurger]").val().trim()
         }
 
-        $.ajax("/api/burgers", {
+        $.ajax("/api/burger", {
             type: "POST",
             data: newBurger
         }).then(function () {
