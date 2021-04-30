@@ -1,21 +1,68 @@
-<div style="overflow: auto;">
+<div style="overflow:auto; box-sizing: border-box; width: 50%; float: left; padding: 10px">
     {{#each burgers}}
     {{#unless devoured}}
-    <div style="box-sizing: border-box; width: 50%; float: left; padding: 10px">
-        <button style="float: right" class="devour-it" data-id="{{id}}">Devour It!</button>
-        <textarea name="burgerName" id="id" cols="60" rows="2" style="float: right">{{id}}. {{burger_name}}</textarea>
+    <div>
+        <button style="float: right; margin-top: 15px" class="devour-it" data-burgerid="{{id}}">Devour It!</button>
+        <textarea name="burgerName" id="id" cols="60" rows="2"
+            style="float: right; margin: 5px">{{id}}. {{burger_name}}</textarea>
     </div>
+    <br style="clear:both" />
     {{/unless}}
     {{/each}}
-
-    <div style="box-sizing: border-box; width: 50%; float: left; padding: 10px">
-        <input type="text" value="Hello" style="width: 300px;" disabled>
-    </div>
 </div>
-<br>
 
-<form id="addBurger" class="button-size">
-    <textarea type="text" cols="40" rows="3" name="newBurger" class="center" style="margin-bottom: 20px;"></textarea>
-    <button type="submit" class="center">Submit</button>
-</form>
-<p style="text-align: center;">Enter a burger you want to eat, the click the "Submit" button</p>
+<div style="overflow:auto; box-sizing: border-box; width: 50%; float: left; padding: 10px">
+    {{#each burgers}}
+    {{#if devoured}}
+    <div>
+        <input type="text" value="{{id}}. {{burger_name}}" style="width: 300px; margin: 5px" disabled>
+    </div>
+    <br>
+    {{/if}}
+    {{/each}}
+</div>
+
+<br style="clear:both" />
+<div>
+    <form id="addBurger" class="button-size">
+        <textarea type="text" cols="40" rows="3" name="newBurger" class="center"
+            style="margin-bottom: 20px;"></textarea>
+        <button type="submit" class="center">Submit</button>
+    </form>
+    <p style="text-align: center">Enter a burger you want to eat, then click the "Submit" button</p>
+</div>
+
+<script type="text/javascript">
+    $(".devour-it").on("click", function (event) {
+        const id = $(this).data("burgerid");
+        let devouredBurger = {
+            id: id,
+            devoured: 1
+        }
+
+        $.ajax("/api/burgers/" + id, {
+            type: "PUT",
+            data: devouredBurger
+        }).then(function () {
+            console.log("devoured burger with id: " + id);
+            location.reload()
+        });
+    });
+
+    $("#addBurger").on("submit", function (event) {
+        //handling this ourselves so need prevent default
+        event.preventDefault();
+
+        let newBurger = {
+            burger_name: $("#addBurger [name=newBurger]").val().trim()
+        }
+
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(function () {
+            console.log("added new burger");
+            location.reload();
+        });
+    });
+</script>

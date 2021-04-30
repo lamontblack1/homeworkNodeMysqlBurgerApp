@@ -45,13 +45,13 @@ let orm = {
         connection.query(queryString, function (err, result) {
             if (err) { throw err };
 
-            cd(result)
+            cb(result)
         });
     },
 
     insertOne: function (tableInput, col, value, cb) {
-        let queryString = "INSERT INTO " + tableInput + "(?) VALUES (?);";
-
+        let queryString = "INSERT INTO " + tableInput + " (??) VALUES (?);";
+      console.log(queryString)
       connection.query(queryString, [col, value], function (err, result) {
         if (err) { throw err };
 

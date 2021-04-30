@@ -9,6 +9,7 @@
     <style>
         body {
             background-color: rgb(255, 231, 122);
+            font-family: Verdana, Geneva, Tahoma, sans-serif
         }
 
         img {
@@ -26,6 +27,16 @@
         h1 {
             text-align: center;
             color: tomato;
+        }
+
+        .clearfix {
+            overflow: auto;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
         }
     </style>
 </head>
