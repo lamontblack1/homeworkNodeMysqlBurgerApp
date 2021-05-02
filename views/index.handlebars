@@ -2,7 +2,7 @@
     {{#each burgers}}
     {{#unless devoured}}
     <div>
-        <button type="button" class="btn btn-primary" style="float: right; margin-top: 15px" class="devour-it"
+        <button type="button" class="btn btn-primary devour-it" style="float: right; margin-top: 15px"
             data-burgerid="{{id}}">Devour It!</button>
         <textarea name="burgerName" id="id" cols="60" rows="2"
             style="float: right; margin: 5px">{{id}}. {{burger_name}}</textarea>
