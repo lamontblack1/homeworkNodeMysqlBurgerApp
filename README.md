@@ -23,4 +23,4 @@ This is useful because the code demonstrates use of mysql server server-side. It
 *   JQuery
 
 # How users can get started with this project
-Simply click the "Eat-Da-Burger" link at the top of this readme page.
+Simply click the "Eat-Da-Burger" link at the top of this readme page. You may add a burger you would like to "devour." You may also "devour" (update the record) a burger.
