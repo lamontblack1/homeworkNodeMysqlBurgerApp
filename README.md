@@ -7,20 +7,20 @@ This is useful because the code demonstrates use of mysql server server-side. It
 
 # Technologies Used
 ##  Client-Side
-    * [node.js](https://nodejs.org/en/)
-    * [npm express](https://www.npmjs.com/package/express)
-    * [npm express-handlebars](https://www.npmjs.com/package/express-handlebars)
-    * [npm mysql](https://www.npmjs.com/package/mysql)
-    * [MySQL database](https://www.mysql.com/)
-    * [router middleware exploited by express](https://expressjs.com/en/guide/routing.html)
-    * [JSON body parsing exploited by express](http://expressjs.com/en/resources/middleware/body-parser.html)
+*   [node.js](https://nodejs.org/en/)
+*   [npm express](https://www.npmjs.com/package/express)
+*   [npm express-handlebars](https://www.npmjs.com/package/express-handlebars)
+*   [npm mysql](https://www.npmjs.com/package/mysql)
+*   [MySQL database](https://www.mysql.com/)
+*   [router middleware exploited by express](https://expressjs.com/en/guide/routing.html)
+*   [JSON body parsing exploited by express](http://expressjs.com/en/resources/middleware/body-parser.html)
     
 ##  Server-Side
-    * JavaScript
-    * CSS
-    * HTML
-    * Bootstrap
-    * JQuery
+*   JavaScript
+*   CSS
+*   HTML
+*   Bootstrap
+*   JQuery
 
 # How users can get started with this project
 Simply click the "Eat-Da-Burger" link at the top of this readme page.
